@@ -1,0 +1,4 @@
+gcc -w -o  httpd httpd.c -pthread  #-D _DEBUG_
+httpd.c: In function ‘start’:
+httpd.c:362: error: incompatible types when assigning to type ‘struct in_addr’ from type ‘unsigned int’
+make: *** [httpd] Error 1
