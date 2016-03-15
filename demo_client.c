@@ -17,20 +17,21 @@ int main(int argc, char *argv[])
 		perror("socket");
 		exit(1);
 	}
-	
+
 	//填写服务器端的相关信息
 	short port = atoi(argv[2]);
 	struct sockaddr_in remote_server;
 	remote_server.sin_family = AF_INET;
 	remote_server.sin_port = htons(port);
 	remote_server.sin_addr.s_addr = inet_addr(argv[1]);
-	
+
 	//与服务器建立连接
-	if( connect(sock, (struct sockaddr*)&remote_server), sizeof(remote_server) ){
+	socklen_t remote_len = sizeof(remote_server);
+	if( connect(sock, (struct sockaddr*)&remote_server, remote_len) < 0 ){
 		perror("connect");
 		exit(2);
 	}
-	
+
 	const char *cmd = argv[3];//CMD表示向服务器端发送的请求
 	int len = strlen(cmd);
 	ssize_t size = send(sock, cmd, len, 0);//send(sock,void *buf,size,flag)
@@ -39,8 +40,11 @@ int main(int argc, char *argv[])
 		close(sock);
 		return 1;
 	}
-	while( recv(sock, buf, sizeof(buf)-1) > 0 ){//接收服务器端的反馈信息
-		printf(%s, buf);
+
+	char buf[1024];
+	memset(buf, 0, sizeof(buf));
+	while( recv(sock, buf, sizeof(buf)-1, 0) > 0 ){//接收服务器端的反馈信息
+		printf("%s", buf);
 		memset(buf, 0, sizeof(buf));
 	}
 	printf("\n");
