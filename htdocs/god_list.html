@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Goods list</title>
+<style type="text/css">
+
+	body{
+		background-color:#eeffff;
+	}
+
+	#godTable{
+		border:solid;
+		border-color:5b5c5e;
+		border-width:1px;
+		margin-left:120px;
+		background-color: #eeffff;
+		font-family:楷体_GB2312;
+	}
+	
+	.tabRow{
+		border:dotted;
+		border-color:#6b6c6e;
+		border-width:1px;
+	}
+
+	td{
+		width: 70px;
+		text-align: center;
+	}
+	
+	#godTable a:LINK{
+			color:black;
+			font-family:楷体_GB2312;
+			margin-bottom: 6px;
+			text-decoration: none;
+		}
+		
+		#godTable a:HOVER{
+			color:#cc8291;
+			font-family:楷体_GB2312;
+			text-decoration: none;
+		}
+		
+		 a:VISITED{
+			color:#918291;
+			font-size:15px;
+			font-family:楷体_GB2312;
+			text-decoration:underline;
+		}
+		
+		a:LINK{
+			color:#6b6c6e;
+			font-size:medium;
+			font-family:楷体_GB2312;
+			margin-bottom: 6px;
+			text-decoration: none;
+		}
+		
+		 a:HOVER{
+			color:#8c93b5;
+			font-size:17px;
+			font-family:楷体_GB2312;
+			text-decoration:underline;
+			margin-bottom: 6px;
+		}
+		
+		#quickMenu a:VISITED{
+			color:#81838e;
+			font-size:medium;
+			font-family:楷体_GB2312;
+			text-decoration:underline;
+			margin-bottom: 6px;
+		}
+		
+		#oper{
+			magin-top:20px;
+			margin-bottom:20px;
+			margin-left:120px;
+		}
+
+</style>
+
+</head>
+<body>
+		<div id="oper">
+			-<a href="add_god.to" >Add new goods</a>-
+			-<a href="findGod.to">Find goods</a>-
+			-<a href="index.html">Back index</a>-
+		</div>
+		<table id="godTable">
+			<tr style="text-align: center;border:solid;">
+				<td>Id</td><td>Name</td><td>Type</td><td>Price</td>
+				<td>Size</td><td>Operater</td><td>Delete</td>
+			</tr>
+			<tr >
+				<td class="tabRow">12</td>
+				<td class="tabRow">wahaha</td>
+				<td class="tabRow">Drink</td>
+				<td class="tabRow">4.50</td>
+				<td class="tabRow">Small</td>
+				<td class="tabRow"><a href="upaGod.to?godId=<%=god.getGodId() %>">Change</a></td>
+				<td class="tabRow"><a href="cgi_bin/del_god_cgi?god_id="++">Del</a></td>
+			</tr>
+		</table>
+</body>
+</html>

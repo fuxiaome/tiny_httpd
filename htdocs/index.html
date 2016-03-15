@@ -1,10 +1,40 @@
+<!DOCTYPE html>
 <html>
-	<head>临时首页</head>
-	<body>
-		<form action="cgi_bin/math_cgi" method="GET">
-			input data1:<input type="text" name="data1"/><br/>
-			input data2:<input type="text" name="data2"/><br/>
-			<input type="submit"/>
-		</form>
-	</body>
+<head>
+	<meata charset="UTF-8">
+	<title>Add new goods</title>
+	<style type="text/css">
+		body{
+			background-color: #eeffff;
+		}
+		
+		#formatTab{
+			margin-left:120px;
+			background-color: #eeffff;
+		}
+	</style>
+</head>
+<body>
+		<p style="margin-left: 100px">Goods Management System</p>
+		<table id="formatTab">
+			<tr>
+				<td><a href="cgi_bin/god_list_cgi">Goods list</a></a></td>
+			</tr>
+			<tr>
+				<td><a href="cgi_bin/add_god_show_cgi">Add new Goods</a></a></td>
+			</tr>
+			<tr>
+				<td><a href="add_god_type.html">Add new Goods Type</a></a></td>
+			</tr>
+			<tr>
+				<td><a href="cal_add.html">Calculate two num sum</a></a></td>
+			</tr>
+			<tr>
+				<td><span onclick="document.getElementById('pic_text').innerHTML='This is a picture';document.getElementById('pic_div').style.background='gray'" >Client here show a picture</span></td>
+			</tr>
+	</table>
+	<div id="pic_div" style="width: 658px;height: 411px;margin-left: 120px;margin-top: 50px" onmouseover="this.style.backgroundImage='url(messi.jpg)'">
+		<h1 id="pic_text" style="line-height: 411px;text-align: center;"></h1>
+	</div>
+</body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meata charset="UTF-8">
+	<title>Add new goods</title>
+	<style type="text/css">
+		body{
+			background-color: #eeffff;
+		}
+		
+		#addGodTab{
+			margin-left:120px;
+			background-color: #eeffff;
+		}
+	</style>
+</head>
+<body>
+	<p><a href="index.html">Back index</a></p>
+	<form action="addGod.do" method="post">
+		<table id="addGodTab">
+			<caption style="font-size: 17px">Please input goods information</caption>
+			<tr>
+				<td>Name:</td><td><input type="text" name="godName"/></td>
+			</tr>
+			<tr>
+				<td>Type:</td>
+				<td>
+					<select name="godType">
+						<option value="" selected="selected">-please choice-</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>Price:</td><td><input type="text" name="godPrice"/></td>
+			</tr>
+			<tr>
+				<td>Size:</td><td>
+					<input type="radio" name="godSize" value="big"/>Big
+					<input type="radio" name="godSize" value="middle"/>Middle
+					<input type="radio" name="godSize" value="small"/>Small
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit"/></td>
+				<td><input type="reset" value ="reset"/></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

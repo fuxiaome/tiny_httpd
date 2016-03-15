@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meata charset="UTF-8">
+	<title>Add new goods type</title>
+	<style type="text/css">
+		body{
+			background-color: #eeffff;
+		}
+		
+		#addGodTab{
+			margin-left:120px;
+			background-color: #eeffff;
+		}
+	</style>
+</head>
+<body>
+	<p><a href="index.html">Back index</a></p>
+	<form action="cgi_bin/add_god_type_cgi" method="post">
+		<table id="addGodTab">
+			<caption style="font-size: 23px">Add new goods type</caption>
+			<tr style="margin-top:10px;">
+				<td>Type name:</td>
+				<td><input type="text" name="type_name"/></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit"/></td>
+				<td><input type="reset" value ="reset"/></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

@@ -1,16 +1,10 @@
 #!/bin/bash
 WORK_PATH=$(pwd)
-HTTPD_CONF=$WORK_PATH/conf/httpd.conf
-
-firewall_switch=$(grep -Ei 'FIREWALL_SWITCH' ${HTTPD_CONF} | awk -F ':' '{print $NF}' | tr -d ' ')
-httpd_port=$(grep -Ei 'HTTPD_CONF' ${HTTPD_CONF} | awk -F ':' '{print $NF}' | tr -d ' ')
-
-if [ "X$firewall_switch" == "XYES"];then
-	service iptables stop
-else
-	service iptables start
-fi
+HTTPD=${WORK_PATH}/httpd
+HTTPD_PORT='8080'
+HTTPD_IP='127.0.0.1'
 
 echo 'httpd begin start...'
-${HTTPD} ${httpd_port}
+export LD_LIBRARY_PATH=${WORK_PATH}/htdocs/cgi_bin/mysql_lib/lib
+${HTTPD}  ${HTTPD_IP}  ${HTTPD_PORT}
 echo 'httpd start done...'
