@@ -14,8 +14,9 @@
 #include<ctype.h>
 #include<fcntl.h>
 
-#define _BACK_LOG_ = 5 //系统维护的监听数
-#define _COMM_SIZE = 1024//缓冲区的大小
+#define _BACK_LOG_ 5 //系统维护的监听数
+#define _COMM_SIZE_ 1024//缓冲区的大小
 #define MAIN_PAGE "index.html"//主页
+#define HTTP_VERSION "HTTP/1.0"
 
 #endif
